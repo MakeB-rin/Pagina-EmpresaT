@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latin American investment group</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles-rse.css">
+    <link rel="icon" href="/img/logo_inicio.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <!-- Contenido principal  -->
+    
+    <!-- nabvar -->
+    <header>
+        <a href="/" class="logo"><img class="logo-img" src="../img/logo_principal.png" alt="logo"></a>
+        <div class="navigation">
+            <ul class="menu">
+                <div class="close-btn"></div>
+                <li class="menu-item"><a href="/" data-i18n="home">Home </a></li>
+                <li class="menu-item"><a href="/nosotros/" data-i18n="about">About LAIG </a></li>
+                <li class="menu-item">
+                    <a class="sub-btn" href="/marcas/" data-i18n="brands">Brands </a>
+                </li>
+                <li class="menu-item"><a href="/rse/" data-i18n="rse">RSE </a></li>
+
+                <li class="menu-item">
+                    <a class="sub-btn" href="#" id="language-toggle">
+                        <img id="selected-flag" src="https://flagcdn.com/w40/us.png" alt="Idioma">
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="sub-item">
+                            <a href="#" id="switch-language">
+                                <img id="other-flag" src="https://flagcdn.com/w40/es.png" alt="Cambiar idioma">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div class="menu-btn"></div>
+    </header>
+    <!-- Fin nabvar -->
+    
+    <br><br><br><br><br>
+    <!-- Titulo-->
+    <div class="header">
+        <h1 class="animated-title" data-i18n="title-rse">CORPORATE SOCIAL RESPONSIBILITY (RSE)</h1>
+        <h2 class="animated-subtitle" data-i18n="subtitle-rse">Our success is measured in smiles and green acres.</h2>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="main-wrapper">
+        <div class="container-card">
+            <div class="box box1">
+                <h2 class="title-box" data-i18n="community1">COMMUNITY IMPACT</h2>
+                <p class="animated-paragraph" data-i18n="texto-rse1">
+                    Empowered artisans: 80% rural women.
+                    Trained tour guides: 200 in 2023.
+                    Families benefited by the Andy Foundation: 1200+.
+                </p>
+
+            </div>
+            <div class="box box2">
+                <h2 class="title-box" data-i18n="community2">ENVIRONMENTAL SUSTAINABILITY</h2>
+                <p class="animated-paragraph" data-i18n="texto-rse2">
+                    BOLIVIAN HANDICRAFT
+                    40% reduction in carbon footprint (vs. 2020).
+                    VORTEX TOURS
+                    90% of tours are free of single-use plastics.
+                </p>
+
+
+            </div>
+            <div class="box box3">
+                <h2 class="title-box" data-i18n="community3">LIVING CULTURE</h2>
+                <p class="animated-paragraph" data-i18n="texto-rse3">
+                    Supported festivals:
+                    Oruro Carnival, Tarabuco Pulljay.
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin Contenedor principal -->
+    
+    <br><br>
+    
+    <!-- Collage -->
+    <div class="collage animate-on-scroll">
+        <div class="img-container">
+            <img src="../img/card_test1.png" alt="Imagen 1" onclick="mostrarImagen(this.src)">
+            <div class="img-text" data-i18n="card1">
+                "Gracias a BOLIVIAN HANDICRAFT, nuestra comunidad tíene futuro dígno"
+            </div>
+            <br>
+            <div class="title-text" data-i18n="persona1">
+                - Juana, artesana aymara.
+            </div>
+
+        </div>
+
+        <div class="img-container">
+            <img src="/img/card_test2.png" alt="Imagen 2" onclick="mostrarImagen(this.src)">
+            <div class="img-text" data-i18n="card2">
+                "VORTEX TOURS nos mostró la Bolivia autentíca"
+            </div>
+            <div class="title-text" data-i18n="persona2">
+                - Klaus y sofia, Alemania.
+            </div>
+        </div>
+
+        <div class="img-container">
+            <img src="/img/card_test3.png" alt="Imagen 3" onclick="mostrarImagen(this.src)">
+            <div class="img-text" data-i18n="card3">
+                "VORTEX TOURS nos mostró la Bolivia autentíca"
+            </div>
+            <div class="title-text" data-i18n="persona3">
+                - Klaus y sofia, Alemania.
+            </div>
+        </div>
+
+        <div class="img-container">
+            <img src="/img/card_test4.png" alt="Imagen 4" onclick="mostrarImagen(this.src)">
+            <div class="img-text" data-i18n="card4">
+                "Gracias a BOLIVIAN HANDICRAFT, nuestra comunidad tíene futuro dígno"
+            </div>
+            <div class="title-text" data-i18n="persona4">
+                - Juana, artesana aymara.
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar imagen grande -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+        <span class="cerrar">&times;</span>
+        <img class="modal-contenido" id="img-grande">
+    </div>
+    <!-- fin Collage -->
+
+    <br><br><br><br>
+    <!-- Texto para mostrar -->
+    <div class="centered-container">
+        <div>
+            <p class="quote-text" data-i18n="texto-rse4">
+                "En <span class="highlight" data-i18n="texto-rse5">Latin American Investment Group</span>
+                el <span class="highlight" data-i18n="texto-rse6">20%</span> de nuestras utilidades se reinvierte en
+                proyectos <span class="highlight" data-i18n="texto-rse7">sociales</span> y <span class="highlight"
+                    data-i18n="texto-rse8">ambientales</span>".
+            </p>
+        </div>
+    </div>
+    <!-- Fin Texto -->
+    <br><br><br></br>
+    
+    <!-- Texto 2 para mostrar -->
+    <div class="imagen-centro">
+        <img src="../img/logo_escrito.png" alt="Descripción de la imagen">
+    </div>
+    <!-- Fin Texto 2 -->
+
+    <br><br><br></br><br>
+    
+    <!--Footer-->
+    <footer>
+        <div class="container">
+            <div class="wrapper">
+                <div class="footer-widget">
+                    <h5></h5>
+                    <div class="logo-footer">
+                        <a href="#"><img src="../img/bh.png" alt=""></a>
+                        <a href="#"><img src="../img/vortex.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h5 data-i18n="service">Services</h5>
+                    <ul class="links">
+                        <p class="texto-descriptivo" data-i18n="parrafo3"></p>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h5 data-i18n="contact">Contact</h5>
+                    <ul class="links">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-envelope fa-sm"></i>
+                                info@bolivianhandicraft.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-envelope fa-sm"></i>
+                                store@bolivianhandicraft.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-envelope fa-sm"></i>
+                                Info@latinamericaninvestmentgroup.org
+                            </a>
+                        </li>
+                        <li>
+                            <div class="whatsapp-links">
+                                <a href="#">
+                                    <i class="fab fa-whatsapp"></i>
+                                    +591 60603111 &nbsp;
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-whatsapp"></i>
+                                    +591 70150630
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-widget">
+                    <a href="../marcas/">
+                        <img src="../img/logo_principal.png" class="logo" />
+                    </a>
+                    <ul class="socials">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <!--<li>
+                            <a href="#">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="responsive-container">
+                <img src="../img/tira_logos.png" alt="">
+            </div>
+            <!-- pie de pagina final -->
+            <div class="copyright-wrapper">
+                <p>
+                    copyright© 2025 - latin american investment group, All Rights Reserved.
+                    <a href="/" target="blank"></a>
+                </p>
+            </div>
+            <!-- Final pie de pagina final -->
+        </div>
+    </footer>
+    <!--Fin Footer-->
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

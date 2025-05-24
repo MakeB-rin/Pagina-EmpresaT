@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+@font-face {
+  font-family: 'Daughter of Fortune';
+  src: url('/fonts/DaughterOfFortune.ttf') format('truetype');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  background: url("../img/fondo-final.jpg") center/cover no-repeat;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*box de div*/
+.header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #23232200, #fab04001);
+  overflow: hidden;
+}
+
+/* Título con degradado y animación */
+.animated-title {
+  font-size: 3.5rem;  /* Aumentado el tamaño */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #FAAF40, #d9cc3d); /* Degradado */
+  -webkit-background-clip: text; /* Necesario para mostrar el degradado solo en el texto */
+  background-clip: text; /* Para todos los navegadores modernos */
+  color: transparent; /* El color de texto original no se verá, solo el degradado */
+  animation: fadeSlideIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Subtítulo en cursiva y negrita */
+.animated-subtitle {
+  font-size: 2.4rem;  /* Aumentado el tamaño */
+  font-weight: bold;
+  font-style: italic;
+  color: #ffffff;
+  animation: fadeSlideIn 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Animación mejorada: fade + slide + slight delay */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 2rem;  /* Aumentado para pantallas más pequeñas */
+  }
+  .animated-subtitle {
+    font-size: 1.5rem;  /* Aumentado para pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-title {
+    font-size: 2rem;  /* Aumentado para pantallas muy pequeñas */
+  }
+  .animated-subtitle {
+    font-size: 1.5rem;  /* Aumentado para pantallas muy pequeñas */
+  }
+}
+
+/*Los 3 box*/
+
+
+
+.main-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+  flex-direction: column; /* Título y divs en columna */
+  gap: 4rem; /* Espaciado entre el título y los divs */
+  margin-bottom: 25rem; /* Aseguramos que haya suficiente espacio en la parte inferior */
+}
+
+.container-card {
+  display: flex;
+  flex-direction: column; /* Organizar los divs uno debajo del otro */
+  align-items: center;
+  gap: 2rem; /* Espaciado entre los divs */
+  width: 80%; /* Aseguramos que los divs no ocupen todo el ancho */
+}
+
+/* Caja general con imagen de fondo */
+.box {
+  background-size: 100% 100%; /* Aseguramos que la imagen cubra todo el div */
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  width: 100%; /* Ocupa todo el ancho */
+  max-width: 700px; /* Limitar el tamaño máximo del div */
+  height: 350px; /* Altura adecuada para imagen */
+  border-radius: 54px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+  margin-top: 2rem; /* Espaciado superior */
+  cursor: pointer; /* Para mostrar que el div es interactivo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Fondo de cada caja */
+.box1 {
+  background-image: linear-gradient(rgba(125, 121, 121, 0.255), rgba(0, 0, 0, 0.311)), url('../img/borde.png');
+}
+.box2 {
+  background-image: linear-gradient(rgba(125, 121, 121, 0.255), rgba(0, 0, 0, 0.311)), url('../img/borde.png');
+}
+.box3 {
+  background-image: linear-gradient(rgba(125, 121, 121, 0.255), rgba(0, 0, 0, 0.311)), url('../img/borde.png');
+}
+
+
+
+/* Título dentro de las cajas */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-box {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FAAF40;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.title-box::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: rgb(191, 148, 18);
+  transition: width 0.3s ease;
+}
+
+
+.box:hover .title-box {
+  transform: scale(1.05); /* agranda el título */
+}
+
+.box:hover .title-box::after {
+  width: 100%; /* aparece línea */
+}
+
+/* Párrafo dentro de las cajas */
+
+.animated-paragraph {
+  text-align: justify;        /* texto justificado */
+  max-width: 100%;
+  color: #f0f0f0;
+  line-height: 1.8;
+  margin-top: 30px;
+  margin-bottom: auto;       /* centrado vertical */
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 1.5s;
+  font-size: 1.4rem;
+}
+
+
+/* Animación de entrada para cada caja */
+.box1 {
+  animation: slideFromRight 1s forwards;
+}
+.box2 {
+  animation: slideFromLeft 1s 0.2s forwards;
+}
+.box3 {
+  animation: slideFromRight 1s 0.4s forwards;
+}
+
+/* Animaciones para mover las cajas */
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Efecto de resaltado con luz blanca cuando pasa el mouse */
+.box:hover {
+  box-shadow: 0 0 15px 0.5px rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+/* Responsivo: cuando la pantalla es pequeña */
+@media (max-width: 1280px) {
+  .main-wrapper {
+    height: auto; /* Permitimos que el contenedor ajuste su altura en pantallas pequeñas */
+    padding: 2rem 1rem; /* Ajustamos los márgenes internos */
+  }
+
+  .container-card {
+    width: 100%;
+    gap: 2rem; /* Espaciado entre los divs */
+  }
+
+  .box {
+    transform: translateX(0); /* Desactivamos el desplazamiento */
+    opacity: 1; /* Aseguramos que los divs sean visibles */
+    animation: slideFromRight 1s forwards; /* Animación para pantallas pequeñas */
+    margin-bottom: 2rem;
+    height: 400px; /* Ajustamos la altura para pantallas más pequeñas */
+    border-radius: 28px;
+  }
+
+  .box1 {
+    animation: slideFromRight 1s forwards;
+  }
+
+  .box2 {
+    animation: slideFromLeft 1s forwards;
+  }
+
+  .box3 {
+    animation: slideFromRight 1s forwards;
+  }
+
+  .animated-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+
+  }
+  .main-wrapper {
+    margin-bottom: 8rem; /* Aseguramos que haya suficiente espacio en la parte inferior */
+  }
+}
+
+
+/*Esto es para la seccion del contenedor de texto*/
+/* Contenedor principal */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Toma toda la altura de la ventana */
+  text-align: justify;
+  padding: 40px 28rem; /* Espaciado en los bordes */
+  background-color: #f8fcff00;
+}
+
+/* Caja del texto */
+.quote-box {
+  max-width: 800px;
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Texto */
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 2.8rem;
+  line-height: 1.5;
+  color: #ffffff; /* Color blanco para legibilidad */
+  margin: 0;
+  padding: 0;
+  opacity: 0; /* Empieza invisible */
+  transform: translateY(30px); /* Comienza desplazado hacia abajo */
+  transition: all 1s ease-out; /* Animación suave */
+}
+
+/* Texto resaltado */
+.highlight {
+  color: #FAAF40;
+  font-weight: bold;
+}
+
+/* Activación de la animación cuando entra en la vista */
+.centered-container.animate .quote-text {
+  opacity: 1;
+  transform: translateY(0); /* Desliza al centro */
+}
+
+/* Responsivo */
+@media (max-width: 1500px) {
+  .quote-text {
+    font-size: 1.5rem; /* Ajuste del tamaño de fuente en pantallas más pequeñas */
+    text-align: left;
+  }
+
+  .title-box{
+    font-size: 1.4rem;
+  }
+
+ .centered-container {
+   padding: 0 15rem; /* Espaciado en los bordes */
+  }
+}
+
+/*Collage*/
+/* --- Collage general --- */
+.collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 140px;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  opacity: 0; /* Inicia oculta */
+  transform: translateY(50px); /* Comienza desplazada hacia abajo */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.img-container.visible {
+  opacity: 1; /* Aparece cuando la clase 'visible' se añade */
+  transform: translateY(0); /* Se desplaza hacia su posición original */
+}
+
+.img-container:hover {
+  transform: scale(1.02);
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* --- Texto sobre las imágenes --- */
+.img-text, .title-text {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.img-text {
+  bottom: 80px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.title-text {
+  bottom: 30px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* --- Modal de imagen --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-contenido {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* --- Botón cerrar (a la izquierda) --- */
+.cerrar {
+  position: absolute;
+  top: 20px;
+  left: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 600px) {
+  .img-text {
+    font-size: 0.9rem;
+    bottom: 60px;
+  }
+
+  .title-text {
+    font-size: 0.85rem;
+  }
+
+  .cerrar {
+    font-size: 30px;
+    left: 20px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+  } 
+}
+
+@media (max-width: 1300px) {
+
+  .centered-container{
+    padding: 0 10rem;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 1280px) {
+
+  .animated-paragraph {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+}
+
+
+@media (min-width: 440px) and (max-width: 1280px) {
+  
+  .box {
+    transform: translateX(0); /* Desactivamos el desplazamiento */
+    opacity: 1; /* Aseguramos que los divs sean visibles */
+    animation: slideFromRight 1s forwards; /* Animación para pantallas pequeñas */
+    margin-bottom: 2rem;
+    height: 350px; /* Ajustamos la altura para pantallas más pequeñas */
+  }
+
+}
+/*imagen centrrado*/
+.imagen-centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* alto de toda la pantalla */
+
+}
+
+.imagen-centro img {
+  max-width: 40%;
+  height: auto;
+}
+
+@media (max-width: 740px) {
+    .imagen-centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh; /* alto de toda la pantalla */
+  }
+
+  .imagen-centro img {
+    max-width: 50%;
+    height: 100px;
+  }
+}
+
+
+@media (min-width: 740px) and (max-width: 1580px) {
+  
+  .imagen-centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* alto de toda la pantalla */
+  }
+
+  .imagen-centro img {
+    max-width: 50%;
+    height: 250px;
+
+  }
+}

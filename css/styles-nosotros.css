@@ -1,0 +1,370 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    /*background-color: #191919;*/
+    background-image: url("../img/fondo-final.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .about-section {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 40px 20px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .header h1 {
+    font-size: 3.5rem;
+    font-weight: 1000;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #a19777, #f8ab37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient 4s ease infinite, slideInLeft 1s ease-out both;
+  }
+  
+  .header .subtitle {
+    font-size: 2.4rem;
+    color: #dbd9d0;
+    font-style: italic;
+    margin-bottom: 70px;
+    animation: slideInLeft 1s ease-out 0.2s both;
+  }
+  
+  .mission-vision {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .card {
+    background-image: linear-gradient(rgba(125, 121, 121, 0.255), rgba(0, 0, 0, 0.311));
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex: 1 1 300px;
+    max-width: 1000px;
+    transition: all 0.4s cubic-bezier(0.1710, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .card:nth-child(1) { animation-delay: 0.4s; }
+  .card:nth-child(2) { animation-delay: 0.6s; }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 2;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card h2 {
+    margin-bottom: 35px;
+    font-size: 2.3rem;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  
+  .card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+  
+  .card:hover h2::after { width: 100px; }
+  
+  .card p {
+    color: #f0ebeb;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .mission {
+    border-top: 4px solid #FAAF40;
+  }
+  .mission::before {
+    background: linear-gradient(90deg, #FAAF40, #cf7f08);
+  }
+  .mission h2 { color: #f2edeb; }
+  .mission h2::after { background: #FAAF40; }
+  
+  .vision {
+    border-top: 10px solid #FAAF40;
+  }
+  .vision::before {
+    background: linear-gradient(90deg, #FAAF40, rgb(219, 190, 4));
+  }
+  .vision h2 { color: #f2edeb; }
+  .vision h2::after { background: #FAAF40; }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(35, 68, 129, 0.021) 0%, rgba(199, 142, 9, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: -1;
+  }
+  
+  .card:hover::after { opacity: 1; }
+  
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .header h1, .header .subtitle, .card {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-section { margin-top: 60px; }
+    .header h1 { font-size: 2rem; }
+    .header .subtitle { font-size: 1.2rem; }
+    .card { flex: 1 1 100%; animation-delay: 0.3s !important; }
+    .card:nth-child(2) { animation-delay: 0.5s !important; }
+  }
+  
+  @media (max-width: 480px) {
+    .about-section { margin-top: 50px; }
+    .header h1 { font-size: 1.8rem; }
+    .card h2 { font-size: 1.5rem; }
+    .card p { font-size: 1rem; }
+    .card { animation: fadeInUpMobile 0.6s ease-out forwards; }
+    @keyframes fadeInUpMobile {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+  
+  .feature-cards-section {
+    --card-max-width: 500px;
+    --card-height: 300px;
+    --card-padding: 35px;
+    --card-text-size: 1.4rem;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    background-color: #ffffff00;
+    font-weight: 400;
+  }
+  
+  .feature-card {
+    width: 100%;
+    max-width: var(--card-max-width);
+    height: var(--card-height);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover { transform: translateY(-10px); }
+  
+  .feature-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .feature-card__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--card-padding);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.398), transparent);
+    color: rgba(0, 0, 0, 0);
+  }
+  
+  .feature-card__text {
+    font-size: var(--card-text-size);
+    line-height: 1.4;
+    text-align: center;
+    margin: 0;
+    color: #000000;
+  }
+  
+  @media (max-width: 768px) {
+    .feature-cards-section {
+      --card-height: 250px;
+      --card-text-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .feature-cards-section {
+      --card-height: 220px;
+      --card-padding: 15px;
+    }
+  }
+  
+  .valores-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .valores-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  
+  .valor-card {
+    background-color: black;
+    border-radius: 70px;
+    /*box-shadow: 0 10px 12px rgba(230, 232, 230, 0.1);*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 350px;
+    max-width: 500px;
+    width: 350px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .valor-card.card-one {
+    background-image: url('../img/card1.png');
+}
+  
+  .valor-card.card-one h3{
+    margin-top: 250px;
+  }
+
+  .valor-card.card-two { background-image: url('../img/card2.png'); }
+  .valor-card.card-three { background-image: url('../img/card3.png'); }
+  .valor-card.card-four { background-image: url('../img/card4.png'); }
+
+  .valor-card.card-four h3{
+    margin-top: 220px;
+  }
+
+  .valor-card.card-five { background-image: url('../img/card5.png'); }
+  
+  .valor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(246, 244, 244, 0.195);
+  }
+  
+  .valor-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .valor-card h3 {
+    color: #ffffff;
+    margin-top: 220px;
+    margin-bottom: 35px;
+    font-size: 1.7rem;
+  }
+  
+  .valor-card p {
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    margin: 30px 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .valores-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .valor-card {
+      min-height: 180px;
+      padding: 14px;
+    }
+  }
+  
+  .img-card {
+    width: 80%;
+    height: auto;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  
