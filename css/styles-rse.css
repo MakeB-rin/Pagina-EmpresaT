@@ -477,7 +477,7 @@ body {
 @media (max-width: 1300px) {
 
   .centered-container{
-    padding: 0 10rem;
+    padding: 0 4rem;
   }
 }
 
@@ -511,8 +511,9 @@ body {
 }
 
 .imagen-centro img {
-  max-width: 40%;
+  max-width: 30%;
   height: auto;
+  margin-top: -150px;
 }
 
 @media (max-width: 740px) {
@@ -520,12 +521,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25vh; /* alto de toda la pantalla */
+    height: 1vh; /* alto de toda la pantalla */
+    margin-bottom: 40px;
   }
 
   .imagen-centro img {
-    max-width: 50%;
-    height: 100px;
+    max-width: 70%;
+    height: 120px;
   }
 }
 
@@ -536,7 +538,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh; /* alto de toda la pantalla */
+    height: 10vh; /* alto de toda la pantalla */
   }
 
   .imagen-centro img {

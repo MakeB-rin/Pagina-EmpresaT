@@ -196,7 +196,7 @@ const translations = {
         // index
         "home": "Inicio",
         "about": "Sobre LAIG",
-        "brands": "Marcas",
+        "brands": "Nuestras Marcas",
         "rse": "RSE",
         "parrafo1": "Conectando el arte, la aventura y la conservacion de Bolivia con el mundo",
         "parrafo2": "Exportacion ética | Turismo sostenible | Conservación con impacto",
@@ -249,7 +249,7 @@ const translations = {
         // index
         "home": "Home",
         "about": "About LAIG",
-        "brands": "Brands",
+        "brands": "Our Brands",
         "rse": "RSE",
         "parrafo1": "Connecting Bolivian Art, Adventure, and Conservation with the World",
         "parrafo2": "Ethical Exports | Sustainable Tourism | Impactful Conservation",
@@ -332,6 +332,7 @@ window.addEventListener('DOMContentLoaded', () => {
 /*texto*/  
   document.addEventListener("DOMContentLoaded", function() {
     const container = document.querySelector('.centered-container');
+     if (!container) return;
     // Función para activar la animación cuando el contenedor esté visible
     function checkAnimation() {
       const rect = container.getBoundingClientRect();
@@ -398,4 +399,17 @@ switchLanguage.onclick = e => {
     // Aplicar idioma guardado
     changeLanguage(savedLang);
 });
+
+ const titulo = document.getElementById('tituloElegante');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          titulo.classList.add('visible');
+          observer.unobserve(titulo); // solo una vez
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(titulo);
 
