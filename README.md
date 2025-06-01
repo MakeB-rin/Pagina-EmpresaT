@@ -1,7 +1,7 @@
 # Pagina-EmpresaT
 
 <h1 align="center">🌄 Pagina Empresa de Turismo</h1> 
-🏕️ Bienvenido a "Latin American Investment Group", un espacio pensado para para descubrir lo mejor del turismo y la aventura. Nuestra misión es brindarte recursos, guías y materiales que te faciliten explorar destinos únicos y planificar tus viajes con facilidad. Aquí encontrarás todo lo que necesitas para explorar, informarte. de forma sencilla, dinámica y efectiva. ¡Descubre lo mejor y aprovecha al máximo tu visita! 🗺️🌟
+🏕️ Bienvenido a "Latin American Investment Group", un espacio pensado para descubrir lo mejor del turismo y la aventura. Nuestra misión es brindarte recursos, guías y materiales que te faciliten explorar destinos únicos y planificar tus viajes con facilidad. Aquí encontrarás todo lo que necesitas para explorar, informarte. de forma sencilla, dinámica y efectiva. ¡Descubre lo mejor y aprovecha al máximo tu visita! 🗺️🌟
 <br>
 
 <h2 >📸 Capturas de pantalla</h1> 
