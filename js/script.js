@@ -124,7 +124,7 @@ window.addEventListener("load", () => {
     } else {
         showHeader();
         if (introSection) {
-            // Asegura que la sección de texto se muestre
+            // Asegura que la sección del texto se muestre
             introSection.style.opacity = "1"; 
             introSection.style.transform = "translateY(0)";
             introSection.style.transition = "opacity 1s ease, transform 1s ease"; 
@@ -378,13 +378,13 @@ switchLanguage.onclick = e => {
     // Detecta nuevo idioma según la bandera principal
     const newLang = selectedFlag.src.includes("/es.png") ? "es" : "en";
 
-    // Cambia el idioma con tu función
+    // Cambia el idioma con la función
     changeLanguage(newLang);
     // Guarda el idioma solo para la sesión
     localStorage.setItem("language", newLang);
 };
 
-// NUEVO: leer idioma guardado
+  //leer idioma guardado
     const savedLang = localStorage.getItem("language") || "en";
 
     // Ajustar banderas según idioma guardado
